@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:test_app/data/attendance_repo.dart';
-import 'package:test_app/logic/copy_formatter.dart';
-import 'package:test_app/models/day_record.dart';
+import 'package:autopunch/data/attendance_repo.dart';
+import 'package:autopunch/logic/copy_formatter.dart';
+import 'package:autopunch/models/day_record.dart';
 
 void main() {
   DateTime d(int day, [int hour = 0, int minute = 0]) => DateTime(2026, 9, day, hour, minute);

@@ -68,7 +68,8 @@ The two isolates share no memory. They communicate through:
 - **`minSdk = 29`:** required by WifiNetworkSuggestion.
 - **`permission_handler` is pinned to `^12.0.1`.** Version 13.x pulls in `permission_handler_android` 14.x, which needs compileSdk 37. That is newer than the AGP 9.1.0 used here supports, so upgrade AGP first.
 - **`flutter_foreground_task` 11.x needs Kotlin ≥ 2.2.20 and Gradle ≥ 8.11.1.** The project uses AGP 9.1.0, Kotlin 2.4.0 and Gradle 9.3.1.
-- **The application ID and Kotlin package are still the template's `com.example.test_app`.** Changing the ID makes Android treat the app as a new install, and existing attendance data doesn't carry over. Change it only when asked, and before real use.
+- **The application ID and Kotlin package are `com.example.autopunch`.** Google Play rejects `com.example.*` IDs, so the ID must move to the owner's own domain before publishing. Changing the ID makes Android treat the app as a new install, and existing attendance data doesn't carry over. Change it only when asked, and before real use.
+- **Naming:** the Dart package and all platform identifiers use `autopunch`; user-visible titles use `AutoPunch`. The project folder on disk is still `test_app`, so generated, git-ignored files such as `ios/Flutter/Generated.xcconfig` still contain that path. This is expected.
 
 ## Status
 _Last updated: 2026-09-22_
@@ -76,14 +77,11 @@ _Last updated: 2026-09-22_
 ### Done
 - The full app as described above: tracking service, auto-connect, Today/History/Copy screens, leave and weekly off days, readable-text copy.
 - App name **AutoPunch**, with a custom launcher icon and notification icon.
+- Renamed `test_app` → `autopunch` everywhere in the project: Dart package, Android ID, iOS/macOS bundle IDs, Linux/Windows binaries, window and web titles.
 - 14 unit tests in `test/` pass, `flutter analyze` is clean, and the debug APK builds.
-- Local git repo on `main` with the initial commit.
+- Code is on GitHub: https://github.com/tanvirulislam/AutoPunch (branch `main`, remote `origin`).
 
 ### To do
-- **Push to GitHub** as the public repo `autopunch`.
-  - Waiting for the user to run `sudo dnf install gh` and `gh auth login`.
-  - Before pushing, ask whether commits should use the GitHub no-reply email instead of the work email, since the repo is public.
-  - Then run `gh repo create autopunch --public --source=. --push`.
 - **On-device testing hasn't been done** because no device or emulator is available. Check:
   - Check-in appears within a minute.
   - Turning Wi-Fi off and on keeps check-in and advances check-out.
@@ -92,7 +90,7 @@ _Last updated: 2026-09-22_
   - Copy output has the right labels.
   - The auto-connect prompt appears on a real phone.
 - **Offered but not yet requested:**
-  - Change the application ID (e.g. `com.<org>.autopunch`).
+  - Change the application ID from `com.example.autopunch` to the owner's domain (e.g. `com.<org>.autopunch`); required for the Play Store.
   - Replace the template README.
   - Export a 512 px Play Store icon from the SVG.
 - **Release signing:** release builds are still signed with the debug key (`android/app/build.gradle.kts`). They need a real signing config before publishing to the Play Store.

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:test_app/service/wifi.dart';
+import 'package:autopunch/service/wifi.dart';
 
 void main() {
   test('normalizeSsid strips Android quotes and hides unknown names', () {

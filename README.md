@@ -1,4 +1,4 @@
-# test_app
+# AutoPunch
 
 A new Flutter project.
 
