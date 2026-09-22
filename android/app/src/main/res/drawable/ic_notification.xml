@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="54"
+    android:viewportHeight="54">
+    <group
+        android:translateX="-27"
+        android:translateY="-27.9">
+        <!-- Wi-Fi arcs -->
+        <path
+            android:pathData="M33.49,43.49 A29,29 0 0 1 74.51,43.49"
+            android:strokeWidth="5.5"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M39.86,49.86 A20,20 0 0 1 68.14,49.86"
+            android:strokeWidth="5.5"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <!-- Clock face -->
+        <path
+            android:pathData="M42.5,64 a11.5,11.5 0 1,0 23,0 a11.5,11.5 0 1,0 -23,0"
+            android:strokeWidth="4.0"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <!-- Clock hands, shaped like a check mark -->
+        <path
+            android:pathData="M54,64 L50.46,60.46"
+            android:strokeWidth="3.6"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M54,64 L57.75,57.50"
+            android:strokeWidth="3.6"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+    </group>
+</vector>
