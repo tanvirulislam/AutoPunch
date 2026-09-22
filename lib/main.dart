@@ -21,6 +21,7 @@ class AttendanceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'AutoPunch',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.teal)),
       darkTheme: ThemeData(
@@ -66,10 +67,7 @@ class _HomeShellState extends State<HomeShell> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _tab,
-        children: const [TodayScreen(), HistoryScreen(), CopyScreen()],
-      ),
+      body: IndexedStack(index: _tab, children: const [TodayScreen(), HistoryScreen(), CopyScreen()]),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _tab,
         onDestinationSelected: (i) => setState(() => _tab = i),
